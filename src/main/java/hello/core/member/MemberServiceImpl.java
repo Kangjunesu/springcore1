@@ -2,8 +2,12 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService{  //인터페이스 구현
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    //join에서 save를 호출하면 다형성에 의해 MemoryMemberRepository에 있는 save가 호출됨
+    private final MemberRepository memberRepository;  // MemoryMemberRepository 의존안하고, MemberRepository 인터페이스만 의존.(추상화에만 의존 DIP)
+
+    public MemberServiceImpl(MemberRepository memberRepository) {  // 생성자 주입
+        this.memberRepository = memberRepository;
+    }
+
     public void join(Member member) {
         memberRepository.save(member);
     }
