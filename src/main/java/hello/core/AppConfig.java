@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Configuration;
         //call AppConfig.memberService
         //call AppConfig.memberRepository
         //call AppConfig.orderService
-//스프링이 싱글톤을 보장했음.
+//스프링이 싱글톤을 보장했음. @Configuration을 없애면 예상대로 나옴
 
 @Configuration  // 설정 정보, 구성 정보
 public class AppConfig {  // 전체 동작 방식을 구성(config), 구현객체 생성, 연결.
