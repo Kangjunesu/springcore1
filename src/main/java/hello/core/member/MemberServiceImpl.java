@@ -15,4 +15,9 @@ public class MemberServiceImpl implements MemberService{  //인터페이스 구�
         return memberRepository.findById(memberId);
     }
 
+    //싱글톤 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 }
