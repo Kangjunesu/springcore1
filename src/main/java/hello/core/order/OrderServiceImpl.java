@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
@@ -18,7 +19,7 @@ public class OrderServiceImpl implements OrderService{
     //@RequiredArgsConstructor 으로 아래 코드 전체 대체.
 //    필수값인 final이 붙은 필드에 대해 생성자 만들어줌
     @Autowired  // 생략가능
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
