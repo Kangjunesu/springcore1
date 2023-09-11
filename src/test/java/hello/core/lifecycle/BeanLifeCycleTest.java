@@ -18,7 +18,7 @@ public class BeanLifeCycleTest {
     //ConfigurableApplicationContext 는 AnnotationConfigApplicationContext의 상위 인터페이스
     @Configuration
     static class LifeCycleConfig {
-        @Bean(initMethod = "init", destroyMethod = "close")
+        @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
